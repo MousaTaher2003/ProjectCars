@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Website</title>
+    <link rel="icon" href="./img/LogoCars.jpg" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .content img {
+            display: block;
+            background-image: url(./img/div2.webp);
+            width: 100%;
+            height: 700px;
+        }
+        nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: black;
+            color: white;
+            padding: 10px;
+        }
+        nav ul{
+            display: flex;
+            list-style: none;
+        }
+        nav ul li{
+            padding: 15px;
+        }
+        nav ul li a{
+            text-decoration: none;
+            color: white;
+            margin: 0 10px;
+            text-align: center;
+            padding-left: 10%;
+            font-size: 50px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        nav ul li a:hover{
+            color: red;
+            font-size: 70px;
+            
+        }
+        nav ul li img{
+            width: 100px;
+            height: 100px;
+        }
+        nav ul li img:hover{
+            width: 150px;
+            height: 150px;
+        }
+        nav ul li a:hover{
+            color: red;
+        }
+        footer{
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        h1{
+            text-align: center;
+        }
+        .div3{
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            background-color: cadetblue;
+        }
+        .div3 p{
+            text-align: center;
+            font-size: 20px;
+        }
+        .div3 > a {
+            text-decoration: none;
+        }
+        .contact-form {
+            background-color: darkgray;
+            padding: 30px;
+            
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: auto;
+        }
+        .contact-form img {
+            display: block;
+            margin: 0 auto 20px;
+        }
+        .contact-form h1 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .contact-form p {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #666;
+        }
+        .contact-form label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        .contact-form input, .contact-form textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: none;
+        }
+        .contact-form button {
+            width: 100%;
+            padding: 15px;
+            background-color: #e74c3c;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .contact-form button:hover {
+            background-color: #c0392b;
+        }
+        .div5{
+            background-color: #333;
+            padding: 10px;
+            text-align: center;     
+        }
+        .header {
+            background-color: #1a1a1a;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 5px solid #e74c3c;
+            border-top: 5px solid #e74c3c;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 30px;
+            color: #ccc
+        }
+        .header h1 span {
+            color: #e74c3c;
+        }
+        .container {
+            display: flex;
+            padding: 20px;
+        }
+        .sidebar {
+            display: flex;
+            margin-right: 20px;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+            background-color: #1a1a1a;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .sidebar ul li a:hover {
+            background-color: #333;
+        }
+        .content {
+            flex: 2;
+        }
+        .content .social-links {
+            display: flex;
+            flex-direction: column;
+        }
+        .content .social-links a {
+            display: flex;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            background-color: #3b5998; /* Default to Facebook color */
+        }
+        .content .social-links a:hover {
+            opacity: 0.8;
+        }
+        .content .social-links a.twitter { background-color: #00aced; }
+        .content .social-links a.google { background-color: #dd4b39; }
+        .content .social-links a.youtube { background-color: #bb0000; }
+        .content .benefits {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #fff;}
+            .video-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 100%;
+            width: 100%;
+        }
+        .video-container iframe {
+            width: 100%;
+            height: 450px;
+            border: none;
+            border-radius: 10px;
+        }
+        .div6{
+            background-color:darkcyan;
+            padding: 10px;
+            text-align: center;
+            width: 96%;
+        }
+        #status{
+            display: flex;
+            color: red;
+            font-size: 20px;
+            text-align: center;
+            width: 30%;
+        }
+        button {
+            position: fixed;
+            right: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+            
+        #goTopBtn {
+            bottom: 80px;
+        }
+
+        
+        #goDownBtn {
+            bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div>
+            <nav>
+                <ul>
+                    <li><img src="./img/LogoCars.jpg" alt=""></li>
+                    <li><a href="./ProjectsCars.html">Home</a></li>
+                    <li><a href="./About.html">About</a></li>
+                    <li><a href="">Contact</a></li>
+                    <li><a></a></li>
+                    <li><a href="./Login.html">Login</a></li>
+                    <li><a href="">Register</a></li>
+                    <li><a href="">Logout</a></li>
+                </ul>
+                
+                
+            </nav>
+        </div>
+        <div class="content">
+            <a href="https://www.alamy.com/stock-photo/bmw-car.html?sortBy=relevant"><img src="./img/div2.webp" alt="Car Image"></a>
+        </div>
+        <div  class="div3" >
+            <a href="https://www.bmw.com/en/index.html"><h1>BMW</h1></a>
+            <p>BMW is a German multinational automobile manufacturer and luxury car manufacturer based in Munich, Bavaria, Germany.</p>
+            <p>Founded in 1916, BMW is one of the world's largest automobile manufacturers, with over 20,000 employees in 12,000 locations around the world.</p>
+            <p>BMW is the second-largest manufacturer of luxury vehicles in the world, after Mercedes-Benz, and the third-largest manufacturer of luxury cars in North America.</p>
+            <p>BMW is a member of the Volkswagen Group and the German automobile industry consortium Daimler AG.</p>
+        </div>
+        <div class="card-group">
+            <div class="card">
+              <svg class="bd-placeholder-img card-img-top" width="100%" height="0" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>BMW M3</title>
+                <rect width="100%" height="100%" fill="#868e96"></rect>
+                <text x="50%" y="50%" fill="#dee2e6" dy=".3em"><img src="./img/bmw1.jpg" alt="BMW M3"></text>
+              </svg>
+              <div class="card-body">
+                <h5 class="card-title">BMW M3</h5>
+                <p class="card-text">The original BMW M3 (E30/2S, E30/2SC) was designed as a 
+                    road-going version of the race car. However, more than 
+                    5,000 cars required for Approval Group A have been sold.</p>
+                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+            <div class="card">
+              <svg class="bd-placeholder-img card-img-top" width="100%" height="0" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>BMW M5</title>
+                <rect width="100%" height="100%" fill="#868e96"></rect>
+                <text x="50%" y="50%" fill="#dee2e6" dy=".3em"><img src="./img/bmw2.jpg" alt="BMW M5"></text>
+              </svg>
+              <div class="card-body">
+                <h5 class="card-title">BMW M5</h5>
+                <p class="card-text">The BMW M5 (E36/3S, E36/3SC) is a sports car produced by 
+                    BMW since 2006. It is the first car to be produced in 
+                    the E36/3S and E36/3SC variants.</p>
+                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+            <div class="card">
+              <svg class="bd-placeholder-img card-img-top" width="100%" height="0" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>BMW M6</title>
+                <rect width="100%" height="100%" fill="#868e96"></rect>
+                <text x="50%" y="50%" fill="#dee2e6" dy=".3em"><img src="./img/bmw3.jpg" alt="BMW M6"></text></svg>
+              <div class="card-body">
+                <h5 class="card-title">BMW M6</h5>
+                <p class="card-text">The BMW M6 (E46/4S, E46/4SC) is a sports car produced by 
+                    BMW since 2006. It is the first car to be produced in 
+                    the E46/4S and E46/4SC variants.</p>
+                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+          </div>
+          <div class="card-group">
+            <div class="card">
+              <svg class="bd-placeholder-img card-img-top" width="100%" height="0" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>BMW M1 (E26)</title>
+                <rect width="100%" height="100%" fill="#868e96"></rect>
+                <text x="50%" y="50%" fill="#dee2e6" dy=".3em"><img src="./img/bmw4.jpg" alt=""></text>
+              </svg>
+              <div class="card-body">
+                <h5 class="card-title">BMW M1 (E26)</h5>
+                <p class="card-text">
+                    The BMW M1 (E26) is a sports car produced by BMW since 2006. 
+                    It is the first car to be produced in the E26 variant.
+                </p>
+                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+            <div class="card">
+              <svg class="bd-placeholder-img card-img-top" width="100%" height="0" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>BMW 1 M COUPÉ (E82)</title>
+                <rect width="100%" height="100%" fill="#868e96"></rect>
+                <text x="50%" y="50%" fill="#dee2e6" dy=".3em"><img src="./img/bmw5.jpg" alt=""></text>
+              </svg>
+              <div class="card-body">
+                <h5 class="card-title">BMW 1 M COUPÉ (E82)</h5>
+                <p class="card-text">
+                    The BMW 1 M COUPÉ (E82) is a sports car produced by BMW since 2006. 
+                    It is the first car to be produced in the E82 variant.
+                </p>
+                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+            <div class="card">
+              <svg class="bd-placeholder-img card-img-top" width="100%" height="0" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>BMW M2 (F87, G87)</title>
+                <rect width="100%" height="100%" fill="#868e96"></rect>
+                <text x="50%" y="50%" fill="#dee2e6" dy=".3em"><img src="./img/bmw6.jpg" alt=""></text>
+              </svg>
+              <div class="card-body">
+                <h5 class="card-title">BMW M2 (F87, G87)</h5>
+                <p class="card-text">
+                    The BMW M2 (F87, G87) is a sports car produced by BMW since 2006. 
+                    It is the first car to be produced in the F87 and G87 variants.
+                </p>
+                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+          </div>    
+      
+        
+        <div class="contact-form">
+            <img src="./img/logoabout2.png" alt="Logo" height="50">
+            <h1>Tell Us What You Feel</h1>
+            <p>Feel Free To Contact Us Any Time</p>
+            <form action="" method="get">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Name" required>
+                
+                <label for="Address">Address</label>
+                <input type="text" id="Address" name="Address" placeholder="Address" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Email Address" required>
+                
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" placeholder="Phone" required>
+                
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" placeholder="Enter your message for us here. We will get back to you as soon as possible." required></textarea>
+                <div id="status">
+                    <label for="status">status</label>
+                    <input type="checkbox" id="status" name="status" value="Married " checked > Married
+                    <input type="checkbox" id="status" name="status" value="Single "> Single
+                </div>
+                <div id="status">
+                    <label for="work">work</label>
+                    <input type="radio" id="work" name="work" value="Student " checked > Student
+                    <input type="radio" id="work" name="work" value="Techer "> Techer
+                    <input type="radio" id="work" name="work" value="Other "> Other
+                </div> 
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+        <div class="div5">
+            <div class="header">
+                <h1>Call us on <span>04 321 53 88</span></h1>
+            </div>
+            <div class="container">
+                <div class="sidebar">
+                    <ul>
+                        <li><a href="#">HOME</a></li>
+                        <li><a href="#">ABOUT US</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">HOW IT WORKS</a></li>
+                        <li><a href="#">WHY CHOOSE US</a></li>
+                        <li><a href="#">CONTACT US</a></li>
+                    </ul>
+                </div>
+                <div class="content">
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/?locale=ar_AR" target="_blank" class="facebook">FACEBOOK</a>
+                        <a href="https://x.com/home?lang=ar" target="_blank" class="twitter">TWITTER</a>
+                        <a href="https://google.com" target="_blank" class="google">GOOGLE +</a>
+                        <a href="https://youtube.com/" target="_blank" class="youtube">YOUTUBE</a>
+                    </div>
+                    <div class="benefits">
+                        <p>Benefit you get by opting for ScrapMyCar.com</p>
+                        <p>The scrap car recycling service from simplyscrapmycar.com offers an instant price for your scrap car. There's a choice to drop your car off locally or a free scrap car collection service and all of the legal paperwork is sorted for you.</p>
+                    </div>
+                </div>
+        </div>
+        </div>
+        <div class="div6">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/KfcsCr2hU3k" allowfullscreen > </iframe>
+            </div>
+        </div> 
+        <div>
+            <footer>
+                <p>Issa Taher & Hitham Abu Soph &copy; 2024 </p>
+                <a href="https://www.facebook.com/?locale=ar_AR" target="_blank" class="facebook">FACEBOOK</a>
+            </footer>
+        </div>
+        
+    </div>
+    <button id="goTopBtn" onclick="goTopFunction()">Go Top</button>
+    <button id="goDownBtn" onclick="goDownFunction()">Go Down</button>
+    <script>
+        function goTopFunction() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+        function goDownFunction() {
+            window.scrollTo({
+                top: document.body.scrollHeight,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+</html>
